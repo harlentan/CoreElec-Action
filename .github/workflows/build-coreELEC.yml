@@ -70,7 +70,7 @@ jobs:
         chmod +x  ./mkn1
         grep "CUSTOM_VERSION" ./mkn1 | sed -r 's/.*CUSTOM_VERSION=(.*) make image/\1/' >> CUSTOM_VERSION
         [ -s CUSTOM_VERSION ] && echo "CUSTOM_VERSION=_$(cat CUSTOM_VERSION)" >> $GITHUB_ENV
-        ./mkn1
+        ./mkn1 -y
         echo "::set-output name=status::success"
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 
