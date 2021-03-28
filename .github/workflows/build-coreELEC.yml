@@ -48,7 +48,7 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH coreELEC
-        ln -sf /workdir/coreELEC $GITHUB_WORKSPACE/coreELEC
+        mv /workdir/coreELEC $GITHUB_WORKSPACE/coreELEC
 
     - name: Load custom kernel config
       run: |
