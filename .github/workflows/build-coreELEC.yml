@@ -70,7 +70,7 @@ jobs:
         echo -e "$(nproc) thread compile"
         chmod +x  ./mkn1
         grep "CUSTOM_VERSION" ./mkn1 | sed -r 's/.*CUSTOM_VERSION=(.*) make image/\1/' >> CUSTOM_VERSION
-        [ -s CUSTOM_VERSION ] && echo "CUSTOM_VERSION=_$(cat CUSTOM_VERSION)" >> $GITHUB_ENV
+        [ -s CUSTOM_VERSION ] && echo "CUSTOM_VERSION=$(cat CUSTOM_VERSION)" >> $GITHUB_ENV
         ./mkn1 -y
         echo "::set-output name=status::success"
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
@@ -93,7 +93,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: CoreELEC-Phicomm-N1.arm-${{ env.CUSTOM_VERSION }}.img.gz
-        path: ${{ env.FIRMWARE }}
+        path: ${{ env.FIRMWARE }}/CoreELEC-Phicomm-N1.arm-${{ env.CUSTOM_VERSION }}.img.gz
 
     - name: Upload firmware to cowtransfer
       id: cowtransfer
