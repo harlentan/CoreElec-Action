@@ -4,8 +4,6 @@ on:
   push:
     paths: 
       - '.github/workflows/cleanup.yml'
-  schedule:
-      - cron: '0 0 * * *'
 
 jobs:
   delete-artifacts:
