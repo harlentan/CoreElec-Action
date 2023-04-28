@@ -11,7 +11,7 @@ on:
 
 env:
   REPO_URL: https://github.com/RuralHunter/CoreELEC.git
-  REPO_BRANCH: n1-9.2
+  REPO_BRANCH: v19.5-N1
   KERNEL_CONFIG_FILE: kernel-config
   TRIGGER: trigger
   UPLOAD_BIN_DIR: false
