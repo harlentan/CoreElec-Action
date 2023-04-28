@@ -10,8 +10,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/RuralHunter/CoreELEC.git
-  REPO_BRANCH: v19.5-N1
+  REPO_URL: https://github.com/harlentan/CoreELEC.git
+  REPO_BRANCH: n1-9.2
   KERNEL_CONFIG_FILE: kernel-config
   TRIGGER: trigger
   UPLOAD_BIN_DIR: false
